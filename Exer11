@@ -1,0 +1,103 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace exer11
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            Pessoa peso;
+            peso = new Pessoa();
+
+            Console.WriteLine("Digite a altura");
+            peso.setAlt(double.Parse(Console.ReadLine()));
+
+            Console.WriteLine("Digite o peso");
+            peso.setPeso(double.Parse(Console.ReadLine()));
+
+            peso.calcularRelacao();
+
+            peso.definirPesoIdeal();
+
+        }
+    }
+}
+
+- Classe:
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace exer11
+{
+    internal class Pessoa
+    {
+        private double alt;
+        private double peso;
+        private double r;
+
+        public Pessoa()
+        {
+            this.alt = 0;
+            this.peso = 0;
+        }
+
+        public Pessoa(int alt,int peso)
+        {
+            this.alt = alt;
+            this.peso = peso;
+        }
+
+        public void setAlt(double alt)
+        {
+            this.alt = alt;
+        }
+
+        public void setPeso(double peso)
+        {
+            this.peso = peso;
+        }
+
+        public double getAlt()
+        {
+            return this.alt;
+        }
+
+        public double getPeso()
+        {
+            return this.peso;
+        }
+
+        public void calcularRelacao()
+        {
+            r = this.peso / (this.alt * this.alt);
+        }
+
+        public void definirPesoIdeal()
+        {
+            if (r < 20)
+            {
+                Console.WriteLine("Abaixo do peso");
+            }
+            else
+            {
+                if(r>=20 && r < 25)
+                {
+                    Console.WriteLine("Peso ideal");
+                }
+                else
+                {
+                    Console.WriteLine("Acima do peso");
+                }
+            }
+        }
+
+    }
+}
