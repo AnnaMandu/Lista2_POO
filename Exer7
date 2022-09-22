@@ -1,0 +1,88 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace exer7
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            Dinheiro converte;
+            converte = new Dinheiro();
+
+            Console.WriteLine("Digite a cotação do dolar:");
+            converte.setCota(double.Parse(Console.ReadLine()));
+
+            Console.WriteLine("Digite o valor:");
+            converte.setDolar(double.Parse(Console.ReadLine()));
+
+            converte.converter();
+
+            Console.WriteLine("Com a cotação em ${0} dólares e o valor que você possui ${1} dólares, o valor em real é: R${2}",
+               converte.getCota(), converte.getDolar(), converte.getReal());
+        }
+    }
+}
+
+- Classe:
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace exer7
+{
+    internal class Dinheiro
+    {
+        private double dolar;
+        private double cota;
+        private double real;
+
+        public Dinheiro()
+        {
+            this.dolar = 0;
+            this.cota = 0;
+        }
+
+        public Dinheiro(double dolar, double cota)
+        {
+            this.dolar = dolar;
+            this.cota = cota;
+        }
+
+        public void setDolar(double dolar)
+        {
+            this.dolar = dolar;
+        }
+
+        public void setCota(double cota)
+        {
+            this.cota = cota;
+        }
+
+        public double getDolar()
+        {
+            return this.dolar;
+        }
+
+        public double getCota()
+        {
+            return this.cota;
+        }
+
+        public double getReal()
+        {
+            return real;
+        }
+
+        public void converter()
+        {
+            real = this.dolar * this.cota;
+        }
+    }
+}
