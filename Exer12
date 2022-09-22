@@ -1,0 +1,106 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace exer12
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            Triangulo tipo;
+            tipo = new Triangulo();
+
+            Console.WriteLine("Digite o primeiro lado:");
+            tipo.setL1(int.Parse(Console.ReadLine()));
+
+            Console.WriteLine("Digite o segundo lado:");
+            tipo.setL2(int.Parse(Console.ReadLine()));
+
+            Console.WriteLine("Digite o terceiro lado:");
+            tipo.setL3(int.Parse(Console.ReadLine()));
+
+            tipo.compararTriangulo();
+
+
+
+        }
+    }
+}
+
+- Classe:
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace exer12
+{
+    internal class Triangulo
+    {
+        private int l1;
+        private int l2; 
+        private int l3;
+
+        public Triangulo()
+        {
+            this.l1 = 0;
+            this.l2 = 0;
+            this.l3 = 0;
+        }
+
+        public Triangulo(int l1, int l2, int l3)
+        {
+            this.l1 = l1;
+            this.l2 = l2;
+            this.l3 = l3;
+        }
+    
+        public void setL1(int l1)
+        {
+            this.l1 = l1;
+        }
+
+        public void setL2(int l2)
+        {
+            this.l2 = l2;
+        }
+
+        public void setL3(int l3)
+        {
+            this.l3 = l3;
+        }
+
+        public void compararTriangulo()
+        {
+            if(this.l1 == this.l2 && this.l1 == this.l3 && this.l2==this.l3)
+            {
+                Console.WriteLine("Triangulo equilatero");
+            }
+            if (this.l1 == this.l2 && this.l2 != this.l3)
+            {
+                Console.WriteLine("Triangulo isosceles");
+            }
+            if(this.l1==this.l3 && this.l3 != this.l2)
+            {
+                Console.WriteLine("Triangulo isosceles");
+            }
+            if(this.l2==this.l3 && this.l2 != this.l1)
+            {
+                Console.WriteLine("Triangulo isosceles");
+            }
+            if (this.l1 != this.l2 && this.l1!= this.l3 && this.l2!=this.l3)
+            {
+                Console.WriteLine("Triangulo escaleno");
+            }
+        }
+
+
+
+
+    }
+}
