@@ -1,0 +1,71 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace exer3
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            Quadrado diagonal1;
+            diagonal1 = new Quadrado();
+
+            Console.Write("Digite a diagonal do quadrado:");
+            diagonal1.setD(int.Parse(Console.ReadLine()));
+
+            diagonal1.calcularArea();
+
+            Console.Write("O valor da area: {0}",
+                diagonal1.getArea());
+        }
+    }
+}
+
+- Classe:
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace exer3
+{
+    internal class Quadrado
+    {
+        private int d;
+        private int area;
+
+        public Quadrado()
+        {
+            this.d = 0;
+        }
+
+        public Quadrado(int d)
+        {
+            this.d = d;
+        }
+        public void setD(int d)
+        {
+            this.d = d;
+        }
+
+        public int getD()
+        {
+            return this.d;
+        }
+
+        public int getArea()
+        {
+            return area;
+        }
+        
+        public void calcularArea()
+        {
+            area = (this.d * this.d) / 2;
+        }
+    }
+}
