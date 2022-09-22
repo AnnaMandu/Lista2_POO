@@ -1,0 +1,72 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace exer6
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            Milha conv;
+            conv = new Milha(); 
+
+            Console.Write("Digite a milha maritmica");
+            conv.setMilha(double.Parse(Console.ReadLine()));
+
+            conv.converter();
+
+            Console.WriteLine("O valor de {0} milha(s) é {1} quilometros",
+            conv.getMilha(), conv.getResultado());
+        }
+    }
+}
+
+- Classe:
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace exer6
+{
+    internal class Milha
+    {
+        private double milha;
+        private double km = 1.852;
+        private double resultado;
+
+        public Milha()
+        {
+            this.milha = 0;
+        }
+
+        public Milha(double milha)
+        {
+            this.milha = milha;
+        }
+        public void setMilha(double milha)
+        {
+            this.milha = milha;
+        }
+
+        public double getMilha()
+        {
+            return this.milha;
+        }
+
+        public double getResultado()
+        {
+            return resultado;
+        }
+
+        public void converter()
+        {
+            resultado = this.milha * km;
+        }
+    }
+}
