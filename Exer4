@@ -1,0 +1,90 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace exer4
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            Triangulo areat;
+            areat = new Triangulo();
+
+            Console.WriteLine("Digite a altura do triângulo");
+            areat.setAlt(int.Parse(Console.ReadLine()));
+
+            Console.WriteLine("Digite a base do triangulo");
+            areat.setBas(int.Parse(Console.ReadLine()));
+
+            areat.calcularArea();
+
+            Console.WriteLine("O valor da area do triangulo:{0}",areat.getArea());
+
+        }
+    }
+}
+
+- Classe:
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Runtime.InteropServices;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace exer4
+{
+    internal class Triangulo
+    {
+        private int alt;
+        private int bas;
+        private int area;
+
+        public Triangulo()
+        {
+            this.alt = 0;
+            this.bas = 0;
+        }
+
+        public Triangulo(int alt, int bas)
+        {
+            this.alt = alt;
+            this.bas = bas;
+        }
+          public void setAlt(int alt) 
+        { 
+            this.alt = alt;
+        }
+
+        public void setBas(int bas)
+        {
+            this.bas = bas;
+        }
+
+        public int getAlt()
+        {
+            return this.alt;
+        }
+
+        public int getBas()
+        {
+           return this.bas;
+        }
+        public int getArea()
+        {
+            return area;
+        }
+
+        public void calcularArea()
+        {
+            area = (this.bas * this.alt) / 2;
+
+        }
+
+
+    }
+}
