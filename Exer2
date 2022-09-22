@@ -1,0 +1,73 @@
+using exer2;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace exer2
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            Quadrado area1;
+            area1 = new Quadrado();
+
+            Console.Write("Digite o valor de aresta:");
+            area1.setA(int.Parse(Console.ReadLine()));
+
+            area1.calcularArea(); 
+
+            Console.WriteLine("O valor da area e:{0}",area1.getArea());
+
+        }
+    }
+}
+
+//Classe
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace exer2
+{
+    internal class Quadrado
+    {
+        private int a;
+        private int area;
+
+        public Quadrado()
+        {
+            this.a = 0;
+        }
+        
+        public Quadrado(int a)
+        {
+            this.a = a;
+        }
+        
+        public void setA(int a)
+        {
+            this.a = a;
+        }
+
+        public int getA()
+        {
+            return this.a;
+        }
+
+        public int getArea()
+        {
+            return area;
+        }
+
+        public void calcularArea()
+        {
+            area = this.a * this.a;
+        }
+    }
+}
