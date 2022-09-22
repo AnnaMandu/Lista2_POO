@@ -1,0 +1,104 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace exer10
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            Retangulo area;
+            area = new Retangulo();
+
+            Console.WriteLine("Digite a base");
+            area.setB(int.Parse(Console.ReadLine()));
+
+            Console.WriteLine("Digite a altura");
+            area.setA(int.Parse(Console.ReadLine()));   
+
+            area.calcularArea();
+
+            Console.WriteLine("A area é:{0}", area.getArea());
+
+            area.compararArea();
+
+        }
+    }
+}
+
+- Classe:
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace exer10
+{
+    internal class Retangulo
+    {
+        private int a;
+        private int b;
+        private int area;
+
+        public Retangulo()
+        {
+            this.a = 0;
+            this.b = 0;
+        }
+
+        public Retangulo(int a, int b)
+        {
+            this.a = a;
+            this.b = b;
+        }
+
+        public void setA(int a)
+        {
+            this.a = a;
+        }
+
+        public void setB(int b)
+        {
+            this.b = b;
+        }
+
+        public int getA()
+        {
+            return this.a;
+        }
+
+        public int getB()
+        {
+            return this.b;
+        }
+
+        public int getArea()
+        {
+            return area;
+        }
+
+        public void calcularArea()
+        {
+            area = this.a * this.b;
+        }
+
+        public void compararArea()
+        {
+            if (area > 100)
+            {
+                Console.WriteLine("Terreno grande");
+            }
+
+            else
+
+            {
+                Console.WriteLine("Terreno pequeno");
+            }
+        }
+    }
+}
