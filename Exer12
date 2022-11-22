@@ -77,6 +77,10 @@ namespace exer12
 
         public void compararTriangulo()
         {
+            if (this.l1 + this.l2 > this.l3 &&
+                this.l1 + this.l3 > this.l2 &&
+                this.l2 + this.l3 > this.l1)
+                
             if(this.l1 == this.l2 && this.l1 == this.l3 && this.l2==this.l3)
             {
                 Console.WriteLine("Triangulo equilatero");
