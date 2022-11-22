@@ -79,8 +79,7 @@ namespace exer12
         {
             if (this.l1 + this.l2 > this.l3 &&
                 this.l1 + this.l3 > this.l2 &&
-                this.l2 + this.l3 > this.l1)
-                
+                this.l2 + this.l3 > this.l1)    
             if(this.l1 == this.l2 && this.l1 == this.l3 && this.l2==this.l3)
             {
                 Console.WriteLine("Triangulo equilatero");
@@ -100,6 +99,10 @@ namespace exer12
             if (this.l1 != this.l2 && this.l1!= this.l3 && this.l2!=this.l3)
             {
                 Console.WriteLine("Triangulo escaleno");
+            }
+            else
+            {
+                Console.WriteLine("Não é triangulo")
             }
         }
 
